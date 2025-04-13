@@ -68,7 +68,7 @@ const RecipeList = () => {
       {error && <p className="text-danger">{error}</p>}
       <div className={styles.gridContainer}>
         {recipes?.results.map((recipe) => (
-          <figure>
+          <figure key={recipe.id}>
             <img
               key={recipe.title}
               src={recipe.image}

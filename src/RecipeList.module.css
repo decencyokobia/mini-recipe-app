@@ -1,0 +1,56 @@
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.lightMode {
+    background-color:#FAFAFA;
+    padding: 1rem;
+    min-height: 100vh;
+}
+
+.darkMode {
+    background-color:#121212;
+    color: white;
+    padding: 1rem;
+    min-height: 100vh;
+}
+
+.mainContainerLightMode {
+    max-width: 800px;
+    width: 90vw;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: 	#1A1A1A;
+}
+
+.mainContainerDarkMode {
+    max-width: 800px;
+    width: 90vw;
+    margin: 0 auto;
+    background-color: #1E1E1E;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: #E0E0E0;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    grid-auto-rows: minmax(100px, auto);
+    padding: 2rem;
+    place-items: center;
+    text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+    .toggleText {
+        display: none;
+    }
+}
+

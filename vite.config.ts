@@ -7,5 +7,5 @@ export default defineConfig({
   build: {
     outDir: 'dist'
   },
-  base: '/recipe-finder-app/'
+  base: '/mini-recipe-app/'
 })

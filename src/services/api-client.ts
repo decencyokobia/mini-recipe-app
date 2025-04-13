@@ -1,5 +1,5 @@
 import axios, {CanceledError} from "axios";
-export const apiKey = '33b6917cedfa47f6ba02a96d27cd3548'
+export const apiKey = import.meta.env.VITE_SPOONOCULAR_KEY ;
 
 export default axios.create({
     baseURL: `https://api.spoonacular.com/recipes/`

@@ -7,6 +7,7 @@ A React and TypeScript based recipe app that allows users to search for recipes 
 - **Search Recipes**: Enter ingredients or dish names in the input field to search for recipes.
 - **Recipe Display**: Displays a list of recipes based on the search query, including the recipe name, image, and a link to the full recipe details.
 - **Responsive Design**: The app is fully responsive and works well on mobile and desktop devices.
+- **Toggle dark mode**: A switch to toggle between light and dark mode for more user interactivity.
 
 ## Technologies Used
 

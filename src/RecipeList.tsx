@@ -30,6 +30,7 @@ const RecipeList = () => {
       .then((res) => {
         if (res.data.results.length === 0) alert(`${query} not found`);
         setRecipes(res.data);
+        console.log(res.data);
         setIsLoading(false);
       })
       .catch((err) => {
@@ -84,12 +85,15 @@ const RecipeList = () => {
       <div className={styles.gridContainer}>
         {recipes?.results.map((recipe) => (
           <figure key={recipe.id}>
-            <img
-              key={recipe.title}
-              src={recipe.image}
-              alt={recipe.title}
-              style={{ width: 100, height: 100, marginBottom: 10 }}
-            />
+            <a href={recipe.spoonacularSourceUrl}>
+              {" "}
+              <img
+                key={recipe.title}
+                src={recipe.image}
+                alt={recipe.title}
+                style={{ width: 100, height: 100, marginBottom: 10 }}
+              />
+            </a>
             <figcaption key={recipe.id}>{recipe.title} </figcaption>
           </figure>
         ))}

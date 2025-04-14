@@ -4,6 +4,9 @@ interface Results {
     id: number;
     title: string;
     image: string;
+
+    spoonacularSourceUrl
+    : string;
 }
 
 export interface Result {
@@ -20,7 +23,7 @@ class HttpService {
     getRecipe() {
         const controller = new AbortController();
 
-      const request =  apiClient.get<Result>(`complexSearch?query=${this.query} chicken&apiKey=${apiKey}&includeNutrition=true`, {signal: controller.signal})
+      const request =  apiClient.get<Result>(`complexSearch?query=${this.query}&addRecipeInformation=true&&apiKey=${apiKey}&includeNutrition=true`, {signal: controller.signal})
 
         return {request, cancel: () => controller.abort()}
     }

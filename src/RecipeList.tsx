@@ -4,6 +4,7 @@ import { FieldValues } from "react-hook-form";
 import useRecipe from "./hook/useRecipe";
 import create from "./services/https-service";
 import styles from "./RecipeList.module.css";
+import { IoSearch } from "react-icons/io5";
 
 const RecipeList = () => {
   const {
@@ -52,19 +53,33 @@ const RecipeList = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(queryChange)}>
+      <form
+        className="d-flex align-items-center mb-2"
+        onSubmit={handleSubmit(queryChange)}
+        style={{ position: "relative" }}
+      >
         <input
           id="query"
           onKeyDown={(e) => e.key === "Enter" && queryChange}
           type="text"
-          className="form-control mt-3 mb-2"
+          className="form-control pe-5"
+          placeholder={`Enter recipe name e.g "pasta"`}
           {...register("query")}
         />
-        <button type="submit" className="btn btn-primary mb-3">
-          Search
+
+        <button
+          type="submit"
+          className={"btn btn-outline-secondary"}
+          style={{ position: "absolute", right: 0 }}
+        >
+          <IoSearch size={20} />
         </button>
       </form>
-      {isLoading && <p className="text-success">Loading.....</p>}
+      {isLoading && (
+        <div className="spinner-border text-success" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      )}
       {error && <p className="text-danger">{error}</p>}
       <div className={styles.gridContainer}>
         {recipes?.results.map((recipe) => (
